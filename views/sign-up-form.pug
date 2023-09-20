@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Sign up
+  form(action="", method="post")
+    label First Name:
+      input(type="text", required="true", name="first_name", placeholder="First Name", value=(undefined === first_name ? '' : first_name))
+    label Last Name: 
+      input(type="text", required="true", name="last_name", placeholder="Last Name", value=(undefined === last_name ? '' : last_name))
+    label Username: 
+      input(type="text", required="true", name="username", placeholder="Username", , value=(undefined === username ? '' : username))
+    label Password: 
+      input(type="password", required="true", name="password", placeholder="Password")
+
+    button Submit
+
+  if errors
+    ul
+      for error in errors
+        li=error.msg
